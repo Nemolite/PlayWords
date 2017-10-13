@@ -1,0 +1,4 @@
+/vendor
+.env
+/other
+/config/config.ini

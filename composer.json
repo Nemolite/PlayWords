@@ -1,0 +1,11 @@
+{
+    "name": "user/play-words",
+    "require": {},
+  "autoload": {
+    "psr-4": {
+      "Controller\\":"Controller",
+      "View\\":"View"
+
+    }
+  }
+}
