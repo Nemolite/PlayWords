@@ -15,17 +15,20 @@
 <div class="container">
 
     <form class="form-signin" role="form" method="post" action="">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h3 class="form-signin-heading" style="text-align: center;">Добро пожаловать в  "Play of Words"</h3>
         <label for="inputEmail" class="sr-only">Login</label>
-        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Ваш логин" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Пароль" required>
         <div class="checkbox">
             <label>
-                <input type="checkbox" value="remember-me"> Remember me
+                <input type="checkbox" value="remember-me"> Запомнить меня
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Играть</button>
+        <p></p>
+        <p><a href="/Register.php">Зарегистрироваться</a></p>
     </form>
 
 </div> <!-- /container -->
