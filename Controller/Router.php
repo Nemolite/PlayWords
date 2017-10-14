@@ -8,8 +8,12 @@
 
 namespace Controller;
 
+use Controller\HomeController;
+
 
 class Router {
+
+  public $controller;
 
   protected static $routes=[]; // table
   protected  static $route =[]; // current
@@ -50,6 +54,40 @@ class Router {
             }
         }
         return false;
+    }
+
+    //dispacher
+
+    public static function dipacher($url)
+    {
+        if (self::compareRoute($url)){
+           $controller = self::$route['controller'];
+
+           $file_controller = __DIR__.'\\'.$controller.'.php';
+           if (is_file($file_controller)) {
+               switch ($url) {
+                   case '/':
+                       $obj = new HomeController();
+                       break;
+                   case '/login':
+                       $obj = new LoginController();
+                       break;
+                   case '/register':
+                       $obj = new RegisterController();
+                       break;
+                   default:
+                       echo "404";
+               }
+           }else{
+               //not file
+               sprintf('File $s does not exist',$file_controller);
+           }
+
+
+
+        }else {
+            //redirct
+        }
     }
 
 }

@@ -8,7 +8,17 @@
 
 namespace Controller;
 
+use Controller\ViewController;
 
 class HomeController {
+
+
+    public function __construct()
+    {
+        ViewController::loadFile('index');
+    }
+
+
+
 
 }

@@ -8,12 +8,12 @@
 
 namespace Controller;
 
-
+use Controller\ViewController;
 class RegisterController {
 
-    public function add()
+    public function __construct()
     {
-
+        ViewController::loadFile('Register');
     }
 
 }

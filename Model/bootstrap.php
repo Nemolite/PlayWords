@@ -17,13 +17,11 @@ try {
 
     $debug = new Tools(); // debug
 
-    Router::add('/login', ['controller'=>'LoginController','action'=>'check']); //default
-    Router::add('/register', ['controller'=>'RegisterController','action'=>'add']);
-    Router::add('/index', ['controller'=>'HomeController','action'=>'display']);
+    Router::add('/login', ['controller'=>'LoginController']); //default
+    Router::add('/register', ['controller'=>'RegisterController']);
+    Router::add('/', ['controller'=>'HomeController']);
 
-
-    $debug->show(Router::getRoutes());
-
+/*
     $db = new connect();
 
     $view_login = __DIR__.'/../View/login.php';
@@ -37,17 +35,10 @@ try {
        //redirect 404
        $debug->show("error");
     }
-
+*/
     $query = $_SERVER['REQUEST_URI'];
-    echo $query;
 
-    if (Router::compareRoute($query)){
-        $debug->show(Router::getRoute());
-    }
-    else {
-        //redirect 404
-    }
-
+    Router::dipacher($query);
 
 }catch (\ErrorException $e){
     echo $e->getMessage();

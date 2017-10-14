@@ -8,7 +8,13 @@
 
 namespace Controller;
 
+use Controller\ViewController;
 
 class LoginController {
+
+    public function __construct()
+    {
+        ViewController::loadFile('login');
+    }
 
 }
