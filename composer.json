@@ -4,8 +4,8 @@
   "autoload": {
     "psr-4": {
       "Controller\\":"Controller",
-      "Helper\\":"Helper",
-      "Controller\\HomeController\\":"Controller/HomeController"
+      "Core\\":"Core",
+      "Helper\\":"Helper"
 
     }
   }

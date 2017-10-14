@@ -28,7 +28,7 @@
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Играть</button>
         <p></p>
-        <p><a href="/Register.php">Зарегистрироваться</a></p>
+        <p><a href="/register">Зарегистрироваться</a></p>
     </form>
 
 </div> <!-- /container -->

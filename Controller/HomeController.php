@@ -12,12 +12,20 @@ use Controller\ViewController;
 
 class HomeController {
 
+    private $include = false;
 
     public function __construct()
     {
-        ViewController::loadFile('index');
+
     }
 
+    public function index()
+    {
+        if (!$this->include){
+            ViewController::loadFile('index');
+            $this->include = true;
+        }
+    }
 
 
 

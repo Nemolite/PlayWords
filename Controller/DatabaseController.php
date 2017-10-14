@@ -9,7 +9,7 @@ namespace Controller;
 
 use PDO;
 
-class connect {
+class DatabaseController {
 
     private  $dbconnect;
 

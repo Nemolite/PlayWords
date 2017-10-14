@@ -40,3 +40,49 @@ body {
   border-top-right-radius: 0;
 }
 
+.header {
+    text-align: center;
+}
+
+.main {
+    width: 65%;
+    height: 50px;
+    border-top: 3px solid indianred;
+    margin: 20px auto;
+   
+}
+
+.left,
+.right {
+    width: 50%;
+    height: 100%;
+    float: left;
+    border-bottom: 1px solid green;
+    border-left:  1px solid green;
+    border-right: 1px solid green;
+
+}
+
+.stroke {
+    width: 40%;
+    height: 60px;
+    margin: 0 auto;
+
+
+}
+.formstyl {
+    padding-left: 25px;
+    
+}
+input.inputstyl {
+    width: 300px;
+}
+
+/* The styles of registration form*/
+
+.form_reg {
+    width: 25%;
+    height: 300px;
+    margin: 0 auto;
+}
+

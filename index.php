@@ -8,4 +8,4 @@
 
 define('ROOT_DIR',__DIR__);
 
-require_once 'Model/bootstrap.php';
+require_once 'Core/startup.php';

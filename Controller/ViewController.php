@@ -16,7 +16,7 @@ class ViewController {
         $templateFile = ROOT_DIR. '/View/'.$nameFile.'.php';
 
         if (is_file($templateFile)){
-           require_once $templateFile;
+           require $templateFile;
         }
         else
         {
