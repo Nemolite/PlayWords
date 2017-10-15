@@ -14,11 +14,6 @@ class HomeController {
 
     private $include = false;
 
-    public function __construct()
-    {
-
-    }
-
     public function index()
     {
         if (!$this->include){

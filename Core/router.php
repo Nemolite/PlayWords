@@ -19,6 +19,8 @@ class Router {
   protected static $routes=[]; // table
   protected  static $route =[]; // current
 
+    public $controller_info = [];
+
     /**
      * @param $reg
      * @param array $route
@@ -68,14 +70,9 @@ class Router {
 
            if (is_file($file_controller)) {
 
-            echo $controller;
-
-               if (class_exists($controller)) {
-                   echo "ok";
-               }else {
-                   //not class
-                   sprintf('Class $s does not exist',$controller);
-               }
+            require_once $file_controller;
+               $obj = new $controller;
+               $obj->index();
 
            }else{
                //not file

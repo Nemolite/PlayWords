@@ -6,6 +6,4 @@
  * Time: 16:44
  */
 
-define('ROOT_DIR',__DIR__);
-
 require_once 'Core/startup.php';
