@@ -8,12 +8,17 @@
 
 namespace Controller;
 
-use Controller\ViewController;
+use Core\ViewController;
 class RegisterController {
 
-    public function __construct()
+    static private $include = false;
+
+    public function display()
     {
-        ViewController::loadFile('Register');
+        if (!self::$include){
+            ViewController::loadFile('register');
+            self::$include = true;
+        }
     }
 
 }

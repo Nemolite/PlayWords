@@ -12,6 +12,8 @@ use Controller\LoginController;
 use Controller\RegisterController;
 use Controller\GameController;
 use Controller\HomeController;
+use Controller\AdminController;
+use Core\ViewController;
 
 
 class Router {
@@ -19,7 +21,7 @@ class Router {
   protected static $routes=[]; // table
   protected  static $route =[]; // current
 
-    public $controller_info = [];
+
 
     /**
      * @param $reg
@@ -65,22 +67,22 @@ class Router {
     {
            if (self::compareRoute($url)){
            $controller = self::$route['controller'];
-           $dir = "Controller";
-           $file_controller = $_SERVER['DOCUMENT_ROOT'].'\\' .$dir .'\\'. $controller.'.php';
 
-           if (is_file($file_controller)) {
+           $fullControllerName = '\\Controller\\' . $controller;
 
-            require_once $file_controller;
-               $obj = new $controller;
-               $obj->index();
+               if (class_exists($fullControllerName)){
+                   $obj = new $fullControllerName;
+                   $obj->display();
+               }else{
 
-           }else{
-               //not file
-               sprintf('File $s does not exist',$file_controller);
-           }
+                   echo "does not exist";
+               }
 
-        }else {
+
+
+           }else {
             //redirct
+               ViewController::loadFile('404');
         }
     }
 

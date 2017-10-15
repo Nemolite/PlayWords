@@ -8,17 +8,17 @@
 
 namespace Controller;
 
-use Controller\ViewController;
+use Core\ViewController;
 
 class HomeController {
 
-    private $include = false;
+    static private $include = false;
 
-    public function index()
+    public function display()
     {
-        if (!$this->include){
+        if (!self::$include){
             ViewController::loadFile('index');
-            $this->include = true;
+            self::$include = true;
         }
     }
 

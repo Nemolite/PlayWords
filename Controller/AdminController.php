@@ -2,24 +2,22 @@
 /**
  * Created by PhpStorm.
  * User: user
- * Date: 14.10.2017
- * Time: 10:05
+ * Date: 15.10.2017
+ * Time: 13:47
  */
 
 namespace Controller;
-
 use Core\ViewController;
 
-class LoginController {
+class AdminController {
 
     static private $include = false;
 
     public function display()
     {
         if (!self::$include){
-            ViewController::loadFile('login');
+            ViewController::loadFile('admin');
             self::$include = true;
         }
     }
-
 }

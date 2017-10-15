@@ -6,14 +6,15 @@
  * Time: 10:06
  */
 
-namespace Controller;
+namespace Core;
 
 
 class ViewController {
 
     public static function loadFile($nameFile)
     {
-        $templateFile = ROOT_DIR. '/View/'.$nameFile.'.php';
+        $templateFile = $_SERVER['DOCUMENT_ROOT'] . '/View/'.$nameFile.'.php';
+
 
         if (is_file($templateFile)){
            require $templateFile;
