@@ -81,8 +81,16 @@ input.inputstyl {
 /* The styles of registration form*/
 
 .form_reg {
-    width: 25%;
+    width: 24%;
     height: 300px;
+    margin: 0 auto;
+}
+
+/* index */
+
+.rules {
+    width: 80%;
+    height: 100%;
     margin: 0 auto;
 }
 

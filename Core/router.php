@@ -78,8 +78,6 @@ class Router {
                    echo "does not exist";
                }
 
-
-
            }else {
             //redirct
                ViewController::loadFile('404');
