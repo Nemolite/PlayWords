@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="router.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="router.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Core/router.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.461538" vertical-offset="1220" max-vertical-offset="2200">
-              <caret line="77" column="38" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.517179" vertical-offset="1452" max-vertical-offset="2618">
+              <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
               <folding>
                 <element signature="e#104#135#0#PHP" expanded="true" />
               </folding>
@@ -47,18 +47,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controller/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.437613" vertical-offset="704" max-vertical-offset="1452">
-              <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+            <state vertical-scroll-proportion="-10.615385" vertical-offset="972" max-vertical-offset="1898">
+              <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
               <folding>
                 <element signature="e#111#135#0#PHP" expanded="true" />
-                <marker date="1508151818343" expanded="true" signature="696:725" placeholder="SELECT * FRO..." />
-                <marker date="1508151818343" expanded="true" signature="696:736" placeholder="SELECT name,..." />
-                <marker date="1508151818343" expanded="true" signature="696:742" placeholder="SELECT name,..." />
-                <marker date="1508151818343" expanded="true" signature="696:986" placeholder="SELECT * FRO..." />
+                <marker date="1508158479462" expanded="true" signature="689:1369" placeholder="SELECT * FRO..." />
+                <marker date="1508158479462" expanded="true" signature="710:823" placeholder="SELECT * FRO..." />
+                <marker date="1508158479462" expanded="true" signature="710:871" placeholder="SELECT * FRO..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Core/ViewController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.8846154" vertical-offset="113" max-vertical-offset="720">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,8 +85,8 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/View/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075" vertical-offset="136" max-vertical-offset="765">
-              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+            <state vertical-scroll-proportion="-5.076923" vertical-offset="225" max-vertical-offset="765">
+              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -122,11 +131,11 @@
         <option value="$PROJECT_DIR$/View/game.php" />
         <option value="$PROJECT_DIR$/View/admin.php" />
         <option value="$PROJECT_DIR$/View/index.php" />
-        <option value="$PROJECT_DIR$/Core/router.php" />
         <option value="$PROJECT_DIR$/Core/startup.php" />
         <option value="$PROJECT_DIR$/View/login.php" />
         <option value="$PROJECT_DIR$/Core/DatabaseController.php" />
         <option value="$PROJECT_DIR$/Controller/LoginController.php" />
+        <option value="$PROJECT_DIR$/Core/router.php" />
       </list>
     </option>
   </component>
@@ -625,14 +634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/ViewController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.076923" vertical-offset="82" max-vertical-offset="720">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/View/assets/mystyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="2244">
@@ -687,20 +688,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/router.php">
+    <entry file="file://$PROJECT_DIR$/Core/DatabaseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.461538" vertical-offset="1220" max-vertical-offset="2200">
-          <caret line="77" column="38" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
-          <folding>
-            <element signature="e#104#135#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-5.6923075" vertical-offset="755" max-vertical-offset="1449">
+          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/View/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="136" max-vertical-offset="765">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        <state vertical-scroll-proportion="-5.076923" vertical-offset="225" max-vertical-offset="765">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -713,24 +712,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/DatabaseController.php">
+    <entry file="file://$PROJECT_DIR$/Core/ViewController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6923075" vertical-offset="755" max-vertical-offset="1449">
-          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+        <state vertical-scroll-proportion="-4.8846154" vertical-offset="113" max-vertical-offset="720">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Controller/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.437613" vertical-offset="704" max-vertical-offset="1452">
-          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+        <state vertical-scroll-proportion="-10.615385" vertical-offset="972" max-vertical-offset="1898">
+          <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
           <folding>
             <element signature="e#111#135#0#PHP" expanded="true" />
-            <marker date="1508151818343" expanded="true" signature="696:725" placeholder="SELECT * FRO..." />
-            <marker date="1508151818343" expanded="true" signature="696:736" placeholder="SELECT name,..." />
-            <marker date="1508151818343" expanded="true" signature="696:742" placeholder="SELECT name,..." />
-            <marker date="1508151818343" expanded="true" signature="696:986" placeholder="SELECT * FRO..." />
+            <marker date="1508158479462" expanded="true" signature="689:1369" placeholder="SELECT * FRO..." />
+            <marker date="1508158479462" expanded="true" signature="710:823" placeholder="SELECT * FRO..." />
+            <marker date="1508158479462" expanded="true" signature="710:871" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.517179" vertical-offset="1452" max-vertical-offset="2618">
+          <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+          <folding>
+            <element signature="e#104#135#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

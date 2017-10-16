@@ -15,6 +15,9 @@ class LoginController {
 
     static private $include = false;
 
+    public $id;
+    public $role;
+
     public function display()
     {
         if (!self::$include){
@@ -26,40 +29,44 @@ class LoginController {
     public function send()
     {
 
-        echo "<pre>";
-        print_r($_REQUEST);
-        echo "</pre>";
-
-        $user['name'] = htmlspecialchars($_REQUEST['login']);
+        $params['login'] = htmlspecialchars($_REQUEST['login']);
+        $params['password'] = md5(htmlspecialchars($_REQUEST['password']));
 
         $connect = new DatabaseController();
 
-        if ( $connect->setConnect()){
-            echo "basa";
+        if ($connect->setConnect()) {
+
+            $sql = 'SELECT *
+            FROM `users`
+            WHERE name ="' . $params['login'] . '"
+            AND password = "' . $params['password'] . '"
+            LIMIT 1
+            ';
+
+            $array = $connect->query($sql, $params);
 
 
-            $sql = "SELECT name,role FROM `users` WHERE name=:name ";
-
-
-            echo "<pre>";
-            print_r($connect->query($sql,$user));
-            echo "</pre>";
-            $array = $connect->query($sql,$user;
-            if  (!empty($array)) {
-                
-                                }
+            if (!empty($array)) {
+                // id and role remember
+                foreach ($array as $value) {
+                    $this->id = $value['id'];
+                    $this->role = $value['role'];
+                }
+                echo "Вы в игре";
+                return true;
 
             } else {
-                echo "такого пользователя нет в базе";
+                echo "<p>Вам необходимо пройти регистрацию<p>";
+                return false;
             }
+
 
         }
 
 
-
-
-
     }
+
+
 
 
 

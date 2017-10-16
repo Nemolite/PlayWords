@@ -75,7 +75,16 @@ class Router {
                    $obj->display();
                    if (null !== self::actionDipacher()){
                        $action = self::actionDipacher();
-                       $obj->$action();
+
+                       if ($obj->$action()){
+                           //header('Location: /game',true,301);
+                           $game = new GameController();
+                           $game->display();
+                       } else {
+                           //
+                       }
+
+
                    }
 
 
