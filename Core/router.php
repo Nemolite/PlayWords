@@ -73,6 +73,12 @@ class Router {
                if (class_exists($fullControllerName)){
                    $obj = new $fullControllerName;
                    $obj->display();
+                   if (null !== self::actionDipacher()){
+                       $action = self::actionDipacher();
+                       $obj->$action();
+                   }
+
+
                }else{
 
                    echo "does not exist";
@@ -82,6 +88,22 @@ class Router {
             //redirct
                ViewController::loadFile('404');
         }
+
+
+    }
+
+    public function actionDipacher()
+    {
+       $action = Router::getRoute();
+       if(!empty($action['action'])){
+           return $action['action'];
+       }else {
+           return null;
+       }
+
+
+
+
     }
 
 }

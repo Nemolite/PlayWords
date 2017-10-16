@@ -11,7 +11,7 @@ use PDO;
 
 class DatabaseController {
 
-    private  $dbconnect;
+    public  $dbconnect;
 
     public function __construct()
     {
