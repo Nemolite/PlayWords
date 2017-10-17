@@ -78,8 +78,10 @@ class Router {
 
                        if ($obj->$action()){
                            //header('Location: /game',true,301);
+                           //unset($obj);
                            $game = new GameController();
                            $game->display();
+
                        } else {
                            //
                        }

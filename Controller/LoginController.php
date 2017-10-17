@@ -10,13 +10,14 @@ namespace Controller;
 
 use Core\ViewController;
 use Core\DatabaseController;
+use Helper\Auth as Auth;
 
 class LoginController {
 
     static private $include = false;
 
-    public $id;
-    public $role;
+    static public $id;
+    static public $role;
 
     public function display()
     {
@@ -51,8 +52,14 @@ class LoginController {
                 foreach ($array as $value) {
                     $this->id = $value['id'];
                     $this->role = $value['role'];
+
                 }
-                echo "Вы в игре";
+
+                $auth = new Auth();
+                $auth->authorize(); //Cookie
+
+                //ViewController::loadFile('/game');
+                //echo "Вы в игре";
                 return true;
 
             } else {

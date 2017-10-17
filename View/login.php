@@ -14,7 +14,7 @@
 
 <div class="container">
 
-    <form class="form-signin" role="form" method="post" action="/login/send" name="form_login">
+    <form class="form-signin" role="form" method="post" action="/game" name="form_login">
         <h3 class="form-signin-heading" style="text-align: center;">Добро пожаловать в  "Play of Words"</h3>
         <label for="inputEmail" class="sr-only">Login</label>
         <input type="text" name="login" id="inputEmail" class="form-control" placeholder="Ваш логин" required autofocus>
