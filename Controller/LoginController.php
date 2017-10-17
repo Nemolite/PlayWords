@@ -10,7 +10,8 @@ namespace Controller;
 
 use Core\ViewController;
 use Core\DatabaseController;
-use Helper\Auth as Auth;
+//use Helper\Auth as Auth;
+
 
 class LoginController {
 
@@ -47,23 +48,22 @@ class LoginController {
             $array = $connect->query($sql, $params);
 
 
-            if (!empty($array)) {
+          if (!empty($array)) {
                 // id and role remember
                 foreach ($array as $value) {
                     $this->id = $value['id'];
                     $this->role = $value['role'];
+                    }
 
-                }
+                $_SESSION['id']= $this->id;
+                $_SESSION['role']= $this->role;
 
-                $auth = new Auth();
-                $auth->authorize(); //Cookie
 
-                //ViewController::loadFile('/game');
-                //echo "Вы в игре";
                 return true;
 
             } else {
-                echo "<p>Вам необходимо пройти регистрацию<p>";
+
+
                 return false;
             }
 

@@ -11,7 +11,8 @@ namespace Helper;
 use Helper\Cookie;
 
 class Auth {
-    protected  $autorized =false;
+    protected $autorized =false;
+    protected $role = false;
 
     public function autorized()
     {
@@ -20,7 +21,7 @@ class Auth {
 
     public function authorize()
     {
-        Cookie::set('auth_authorized',true);
+        Cookie::set('authorized',true);
 
         $this->autorized = true;
 
@@ -28,15 +29,39 @@ class Auth {
 
     public function checkauthorize()
     {
-        return Cookie::get('auth_authorized');
+        return Cookie::get('authorized');
 
     }
 
     public function unAuthorize()
     {
-        Cookie::delete('auth_authorized');
+        Cookie::delete('authorized');
 
         $this->autorized = false;
+
+    }
+
+
+
+    public function authLikeAdmin()
+    {
+        Cookie::set('role',true);
+
+        $this->role = true;
+
+    }
+
+    public function checkAuthLikeAdmin()
+    {
+        return Cookie::get('role');
+
+    }
+
+    public function unAuthorizeAdmin()
+    {
+        Cookie::delete('role');
+
+        $this->role = false;
 
     }
 }
