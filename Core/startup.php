@@ -19,7 +19,7 @@ try {
 
     Router::add('/', ['controller'=>'HomeController']);//default
     Router::add('/login', ['controller'=>'LoginController']);
-    Router::add('/login/send', ['controller'=>'LoginController','action'=>'send']);
+    //Router::add('/login/send', ['controller'=>'LoginController','action'=>'send']);
 
     Router::add('/register', ['controller'=>'RegisterController']);
     Router::add('/game', ['controller'=>'GameController']);

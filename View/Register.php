@@ -14,20 +14,20 @@
 <h1>Регистрация нового игрока</h1>
 </div>
 <div class="form_reg">
-    <form name="reg_form" id="reg_form" action="Controller/Register.php" method="post">
+    <form name="reg_form" id="reg_form" action="/register" method="post">
 
         <fieldset class="form-group">
             <label for="exampleInputLogin">Логин</label>
-            <input type="text" class="form-control" id="exampleInputLogin" placeholder="Login">
+            <input type="text" class="form-control" id="exampleInputLogin" name="regname" placeholder="Login">
         </fieldset>
         <fieldset class="form-group">
             <label for="exampleInputPassword1">Пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword1"
+            <input type="password" class="form-control" id="exampleInputPassword1" name="pwd1"
                    placeholder="Пароль">
 
         </fieldset>
         <fieldset class="form-group">
-             <input type="password" class="form-control" id="exampleInputPassword2"
+             <input type="password" class="form-control" id="exampleInputPassword2" name="pwd2"
                    placeholder="Подтвердите пароль">
             <small class="text-muted">Повторите ввод пароля</small>
         </fieldset>

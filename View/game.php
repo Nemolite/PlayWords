@@ -22,7 +22,7 @@
 
         </div>
         <div class="right">
-            <h3>Мои ходы</h3>
+            <h3>Computer</h3>
             <p id="result_computer"></p>
 
         </div>

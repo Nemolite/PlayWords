@@ -64,5 +64,14 @@ class DatabaseController {
         return $sth->execute($values);
     }
 
+    public function insertUser($sql)
+    {
+        /*
+        $stmt = $dbh->prepare("INSERT INTO REGISTRY (name, value) VALUES (:name, :value)");
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':value', $value);
+        */
+    }
+
 }
 

@@ -68,18 +68,32 @@ class Router {
            if (self::compareRoute($url)){
            $controller = self::$route['controller'];
 
+              // echo "$controller";
+
            $fullControllerName = '\\Controller\\' . $controller;
 
                if (class_exists($fullControllerName)){
                    $obj = new $fullControllerName;
                    $obj->display();
+
+                   //логика обработки регистрации
+
+                   if ($controller=='RegisterController'){
+                       $obj->rgisterUser();
+                   }
+
+
+
+
+
+                   /*
                    if (null !== self::actionDipacher()){
                        $action = self::actionDipacher();
 
                        if ($obj->$action()){
-                           
-                           $game = new GameController();
-                           $game->display();
+
+                          // $game = new GameController();
+                           $obj->display();
 
                        } else {
                            //
@@ -87,6 +101,7 @@ class Router {
 
 
                    }
+                   */
 
 
                }else{
@@ -101,7 +116,7 @@ class Router {
 
 
     }
-
+/*
     public function actionDipacher()
     {
        $action = Router::getRoute();
@@ -115,5 +130,5 @@ class Router {
 
 
     }
-
+*/
 }
