@@ -26,52 +26,41 @@ class AdminController {
 
                 $admin_line = new DatabaseController();
                 $admin_line->dbconnect;
-                $sql_admin = 'SELECT words FROM `wordstable`';
+                $sql_id = 'SELECT `id_words` FROM `wordstable`';
+
+               $array_data = $admin_line->query($sql_id);
+
+               $id_arr=[];
+
+                foreach ($array_data as $arr){
+                    foreach($arr as $value){
+                        $id_arr[] ='id'.$value;
+                    }
+                }
+
+
+                $sql_val = 'SELECT `words` FROM `wordstable`';
+
+                $array_val = $admin_line->query($sql_val);
+
+                $val_arr= [];
+
+                foreach ($array_val as $arr_val){
+                    foreach($arr_val as $val){
+                        $val_arr[] =$val;
+                    }
+                }
+
+
+                $result_array = array_combine ( $id_arr, $val_arr);
+
+                extract($result_array);
 
                 ob_start();
-
-                $array_data = $admin_line->query($sql_admin);
-
-                echo "<pre>";
-               print_r($array_data);
-                echo "</pre>";
-
-                echo "<br>";
-                echo $array_data[0][words];
-
-                $key = $array_data[0][words];
-
-
-
-               // extract($array_data);
-
-                echo "<pre>";
-              //  print_r(extract($array_data));
-                echo "</pre>";
-
-
-
-                //включаем неявный сброс
                 ob_implicit_flush();
 
-                try {
-
-                ViewController::loadFile('admin');
-                   // echo "<pre>";
-                   // print_r($array_data);
-                   // echo "</pre>";
-
-                }catch (\Exception $e){
-                    //  если ошибка отключаем и очищаем буфер при этом данные будут стерты
-                    ob_end_clean();
-                    throw $e;
-                }
-                // ob_get_flush — Сброс буфера вывода,
-                // возвращая его содержимое и
-                // отключение буферизации вывода
-                // данные будут выведены
+               ViewController::loadFile('admin');
                 echo ob_get_clean();
-
 
                 self::$include = true;
             }else{

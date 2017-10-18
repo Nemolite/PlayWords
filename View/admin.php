@@ -61,21 +61,15 @@
                     </tr>
                     </thead>
                     <tbody>
+
                     <tr>
-                        <td><?= $key;?></td>
-                        <td>Удалить</td>
+                        <td><?=$id1?></td>
+                        <td>Удалить<?php
+                            echo $id2;
+                            ?></td>
 
                     </tr>
-                    <tr>
-                        <td><?= $sql_admin[2][words];?></td>
-                        <td>Удалить</td>
 
-                    </tr>
-                    <tr>
-                        <td><?=  $sql_admin[3][words];?></td>
-                        <td>Удалить</td>
-
-                    </tr>
 
                     </tbody>
                 </table>
