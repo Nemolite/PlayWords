@@ -20,28 +20,42 @@ class GameController {
     {
         if (!self::$include){
 
-            $check = new Login();
+                $user = new Login();
+                $user->send();
 
-            if ($check->send())  {
-               if (isset($_SESSION['id'])){
+          //  print_r($_SESSION);
 
-                   if(1==$_SESSION['role']){
-                       echo "Привет, admin!";
-                       echo "
-                       <p><a href=\"/admin\">В панель упарвления</a></p>
-                       ";
-                   }
+               if (isset($_SESSION['id'])) { //
 
-               ViewController::loadFile('game');
-                self::$include = true;
-               }else{
-                   ViewController::loadFile('404');
-               }
-            }else{
-                ViewController::loadFile('login');
-                echo "<p>Вам необходимо пройти регистрацию<p>";
-            }
+                    $this->isAdmin(); //for admin
+
+                    ViewController::loadFile('game');
+                    self::$include = true;
+
+                }else  {
+                    ViewController::loadFile('login');
+                    echo "<p>Вам необходимо пройти регистрацию<p>";
+                }
+
         }
+    }
+
+
+   public function isAdmin()
+      {
+          if(1==$_SESSION['role']){
+               echo "Привет, admin!";
+               echo "
+               <p><a href=\"/admin\">В панель упарвления</a></p>
+                   ";
+           }
+      }
+
+    public function locicGame()
+    {
+        //парсим uri
+        // достаем переданное слово
+        // проверяем его по базе
     }
 
 }

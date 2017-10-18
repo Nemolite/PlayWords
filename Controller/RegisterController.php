@@ -56,10 +56,16 @@ class RegisterController {
                 }
 
                if ($line->insertUser($params['login'],$params['password'])){
-                    echo "Данные в базе";
+                    $_SESSION['id'] = $line->insertUser($params['login'],$params['password']);
+                   // print_r($_SESSION['id']);
+                    echo "Вы успешно зарегистрировались";
+                    echo "
+                       <p><a href=\"/login\">Добро пожаловать на игру</a></p>
+                       ";
+                   return true;
                 }
 
-                print_r($params);
+                //print_r($params);
 
             }
 

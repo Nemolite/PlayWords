@@ -70,8 +70,8 @@ class DatabaseController {
         $stmt = $this->dbconnect->prepare("INSERT INTO `users` (name, password) VALUES (:name, :password)");
         $stmt->bindParam(':name', $login);
         $stmt->bindParam(':password', $password);
-
-        return $stmt->execute();
+        $stmt->execute();
+        return $this->dbconnect->lastInsertId(); //id
 
 
     }

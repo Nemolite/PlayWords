@@ -17,8 +17,8 @@ class LoginController {
 
     static private $include = false;
 
-    static public $id;
-    static public $role;
+       private $id;
+       private $role;
 
     public function display()
     {
@@ -36,17 +36,17 @@ class LoginController {
 
         $connect = new DatabaseController();
 
-        if ($connect->setConnect()) {
+                if ($connect->setConnect()) {
 
-            $sql = 'SELECT *
-            FROM `users`
-            WHERE name ="' . $params['login'] . '"
-            AND password = "' . $params['password'] . '"
-            LIMIT 1
-            ';
+                    $sql = 'SELECT *
+                    FROM `users`
+                    WHERE name ="' . $params['login'] . '"
+                    AND password = "' . $params['password'] . '"
+                    LIMIT 1
+                    ';
 
-            $array = $connect->query($sql, $params);
-
+                    $array = $connect->query($sql, $params);
+                }
 
           if (!empty($array)) {
                 // id and role remember
@@ -58,17 +58,7 @@ class LoginController {
                 $_SESSION['id']= $this->id;
                 $_SESSION['role']= $this->role;
 
-
-                return true;
-
-            } else {
-
-
-                return false;
             }
-
-
-        }
 
 
     }

@@ -49,7 +49,9 @@ class Router {
         return self::$route;
     }
 
-    public static function compareRoute($url)
+    public static function compareRoute($url)//доработать
+
+
     {
         foreach(self::$routes as $pattern => $route)
         {
@@ -82,8 +84,11 @@ class Router {
                        $obj->rgisterUser();
                    }
 
+                   if ($controller=='GameController'){
+                       $obj->locicGame();
+                   }
 
-
+                   //переход на метод логики игры, или вызов метода логики игры
 
 
                    /*
@@ -98,7 +103,6 @@ class Router {
                        } else {
                            //
                        }
-
 
                    }
                    */

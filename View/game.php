@@ -18,12 +18,16 @@
     <div class="main">
         <div class="left">
         <h3>Ваши ходы</h3>
-            <p id="result_user"></p>
+            <p id="result_user">слво</p>
+            <p id="result_user">слво</p>
+            <p id="result_user">слво</p>
 
         </div>
         <div class="right">
             <h3>Computer</h3>
-            <p id="result_computer"></p>
+            <p id="result_computer">asdfasd</p>
+            <p id="result_computer">asdfasd</p>
+            <p id="result_computer">asdfasd</p>
 
         </div>
 
@@ -35,14 +39,16 @@
 <div class="stroke">
     <form class="formstyl" name="wordform" action="" method="post">
         <lable for="bit">Ваш ход</lable>
-        <input class="inputstyl" type="text" name="word" id="bit" value="Введите слово"/>
+        <input class="inputstyl" type="text" name="word" id="bit" placeholder="Введите слово"/>
         <button type="submit" class="btn btn-primary" onclick="javascript:send()">Сделать ход</button>
     </form>
 </div>
+<div class="debug"></div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 <script src="../View/assets/script.js"></script>
+<script src="../View/assets/game.js"></script>
 </body>
 </html>
