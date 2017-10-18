@@ -64,13 +64,16 @@ class DatabaseController {
         return $sth->execute($values);
     }
 
-    public function insertUser($sql)
+    public function insertUser($login,$password)
     {
-        /*
-        $stmt = $dbh->prepare("INSERT INTO REGISTRY (name, value) VALUES (:name, :value)");
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':value', $value);
-        */
+
+        $stmt = $this->dbconnect->prepare("INSERT INTO `users` (name, password) VALUES (:name, :password)");
+        $stmt->bindParam(':name', $login);
+        $stmt->bindParam(':password', $password);
+
+        return $stmt->execute();
+
+
     }
 
 }

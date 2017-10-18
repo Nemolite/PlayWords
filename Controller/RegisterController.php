@@ -55,21 +55,11 @@ class RegisterController {
                     }
                 }
 
-
-
-                $sql_insert = 'INSERT INTO users SET
-                        name     = "'.$params['login'].'",
-                        password = "'.$params['pwd1'].'"
-                ';
-
-                $insert = $line->query($sql_insert, $params);
-
-                if ($insert){
+               if ($line->insertUser($params['login'],$params['password'])){
                     echo "Данные в базе";
                 }
 
                 print_r($params);
-
 
             }
 
