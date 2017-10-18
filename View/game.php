@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Admin</title>
+    <title>Играем!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../View/assets/mystyle.css">
 
 </head>
 <body>
 
-<div class="header">
+<div class="game">
 
     <h1> "PlayWords"!</h1>
 
     <div class="main">
         <div class="left">
         <h3>Ваши ходы</h3>
-            <p id="result_user">слво</p>
-            <p id="result_user">слво</p>
-            <p id="result_user">слво</p>
+            <p id="result_user">слово</p>
+
 
         </div>
         <div class="right">
             <h3>Computer</h3>
-            <p id="result_computer">asdfasd</p>
-            <p id="result_computer">asdfasd</p>
-            <p id="result_computer">asdfasd</p>
+            <p id="result_computer">огонь</p>
+
 
         </div>
 
@@ -40,10 +38,10 @@
     <form class="formstyl" name="wordform" action="" method="post">
         <lable for="bit">Ваш ход</lable>
         <input class="inputstyl" type="text" name="word" id="bit" placeholder="Введите слово"/>
-        <button type="submit" class="btn btn-primary" onclick="javascript:send()">Сделать ход</button>
+        <button type="button" class="btn btn-primary" onclick="javascript:transfer()">Сделать ход</button>
     </form>
 </div>
-<div class="debug"></div>
+<p id="debug"></p>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
