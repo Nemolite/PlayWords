@@ -11,13 +11,17 @@ namespace Core;
 
 class ViewController {
 
-    public static function loadFile($nameFile)
+    public static function loadFile($nameFile,$array_date=[])
     {
         $templateFile = $_SERVER['DOCUMENT_ROOT'] . '/View/'.$nameFile.'.php';
 
 
         if (is_file($templateFile)){
-           require $templateFile;
+            if(!empty($array_date)) {
+               // extract($array_date);
+
+                require $templateFile;
+            }
         }
         else
         {

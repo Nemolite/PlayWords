@@ -23,13 +23,7 @@ class AdminController {
 
             if ((1==$_SESSION['role'])&&(isset($_SESSION['id']))) {
 
-/*
-                $admin_line = new DatabaseController();
-                $admin_line->dbconnect;
-                $sql_id = 'SELECT `id_words` FROM `wordstable`';
-               $array_data = $admin_line->query($sql_id);
 
-*/
                 $admin = new Basa();
                 $array_data = $admin->requestWords('id_words','wordstable');
                 $id_arr=[];
@@ -39,13 +33,6 @@ class AdminController {
                         $id_arr[] ='id'.$value;
                     }
                 }
-
-/*
-                $sql_val = 'SELECT `words` FROM `wordstable`';
-
-                $array_val = $admin_line->query($sql_val);
-
-*/
 
                 $array_val = $admin->requestWords('words','wordstable');
                 $val_arr= [];
@@ -59,13 +46,9 @@ class AdminController {
 
                 $result_array = array_combine ( $id_arr, $val_arr);
 
-                extract($result_array);
+               ViewController::loadFile('admin', $result_array);
+                // $templateFile = $_SERVER['DOCUMENT_ROOT'] . '/View/'.$nameFile.'.php';
 
-                ob_start();
-                ob_implicit_flush();
-
-               ViewController::loadFile('admin');
-                echo ob_get_clean();
 
                 self::$include = true;
             }else{
