@@ -20,8 +20,10 @@ class ViewController {
         if (is_file($templateFile)){
             if(!empty($array_date)) {
                extract($array_date);
-               require $templateFile;
+
             }
+            require $templateFile;
+
         }
         else
         {

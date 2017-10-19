@@ -10,6 +10,7 @@ require_once __DIR__ . '/../vendor/autoload.php'; // autoload classes (composer.
 
 use Helper\Tools; //It is only for debuging
 use Core\Router;
+use Core\DatabaseController;
 
 try {
 
@@ -29,9 +30,19 @@ try {
 
     $query = $_SERVER['REQUEST_URI'];
 
-    Router::dipacher($query);
+    $parse_query = parse_url($query, PHP_URL_QUERY);
 
+    if (empty($parse_query)) {
+        Router::dipacher($query);
+    }
 
+    //delete word
+         if (!empty($parse_query)) {
+             $tmp_id = explode ( '=' , $parse_query);//id=<numder>
+
+             Router::dispacher_delete($tmp_id[1]);//$tmp_id[1] = id for delete
+
+           }
 
 
 }catch (\ErrorException $e){

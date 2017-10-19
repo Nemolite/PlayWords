@@ -41,23 +41,23 @@ document.getElementById("Index").onclick = function(){
 // delete words (admin panel)
 
 function delete_words(obj){
-    console.log(obj.id)
+
+
     var id_delete = encodeURI(obj.id);
+    id_delete= id_delete.substring(2)
     console.log(id_delete)
-    var name_value = obj.value;
-    console.log(name_value)
-
-
-
 
     var http = createObject(); //AJAX
 
-    http.open('get',"/Core/del.php?id="+id_delete);
+    http.open('get',"/Core/startup.php?id="+id_delete);
     http.onreadystatechange = function() {
         if(http.readyState == 4){
             var response = http.responseText;
             console.log(response);
-            document.getElementById('res_del').innerHTML = response;
+
+           // document.getElementById('res_del').innerHTML = '<p>'+response+'</p>';
+            setTimeout("window.location.reload()",100)
+
         }
     }
     http.send(null);

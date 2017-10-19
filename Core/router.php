@@ -135,4 +135,10 @@ class Router {
 
     }
 */
+    public function dispacher_delete($id)
+    {
+        $db = new DatabaseController();
+        $db->delete_word($id);
+        //echo $id;
+    }
 }

@@ -25,14 +25,16 @@ class DatabaseController {
 
      public function setConnect()
      {
-         $ini_array = parse_ini_file("config/config.ini");
+         $ini_array = parse_ini_file($_SERVER['DOCUMENT_ROOT']."/config/config.ini");
 
          $dsn = 'mysql:dbname='.$ini_array[dbname].';host='.$ini_array[host];
 
          $user = $ini_array[username];
          $password = $ini_array[userpass];
 
-         $this->dbconnect  = new PDO($dsn, $user, $password,[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+
+         $this->dbconnect = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+
 
          return $this;
 
@@ -84,6 +86,17 @@ class DatabaseController {
         $array = $this->dbconnect->query($sql);
 
        return $array;
+
+    }
+
+    public function delete_word($id)
+    {
+
+        $sql = "DELETE FROM wordstable WHERE id_words=".$id;
+
+        $num = $this->dbconnect->exec($sql);
+
+        echo $num;
 
     }
 

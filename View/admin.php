@@ -68,6 +68,7 @@
 
                         <td>
         <button type="button" class="btn btn-primary" value="<?=$key?>" id="<?=$key?>" onclick="javascript:delete_words(this)">Удалить</button>
+                            <div id="res_del"></div>
                         </td>
 
                     </tr>
@@ -75,13 +76,14 @@
                     </form>
 
                     </tbody>
+
                 </table>
 
             </div>
         </div>
     </div>
 </div>
-<div id="res_del"></div>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
