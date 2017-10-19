@@ -35,7 +35,7 @@
 
 <div class="container-fluid">
     <div class="row">
-     
+
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li class="active"><a href="#">Игроки<span class="sr-only">(current)</span></a></li>
@@ -61,27 +61,27 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <form action="">
 <?php foreach($array_date as $key => $value) {?>
                     <tr>
                         <td><?=$value?></td>
-                        <td>Удалить</td>
+
+                        <td>
+        <button type="button" class="btn btn-primary" value="<?=$key?>" id="<?=$key?>" onclick="javascript:delete_words(this)">Удалить</button>
+                        </td>
 
                     </tr>
 <?php } ?>
+                    </form>
 
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>
 </div>
-<?php
-echo "<pre>";
-print_r($array_data);
-echo "</pre>";
-
-
-?>
+<div id="res_del"></div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

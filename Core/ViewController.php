@@ -16,11 +16,11 @@ class ViewController {
         $templateFile = $_SERVER['DOCUMENT_ROOT'] . '/View/'.$nameFile.'.php';
 
 
+
         if (is_file($templateFile)){
             if(!empty($array_date)) {
-               // extract($array_date);
-
-                require $templateFile;
+               extract($array_date);
+               require $templateFile;
             }
         }
         else

@@ -38,6 +38,56 @@ document.getElementById("Index").onclick = function(){
 };
 
 
+// delete words (admin panel)
+
+function delete_words(obj){
+    console.log(obj.id)
+    var id_delete = encodeURI(obj.id);
+    console.log(id_delete)
+    var name_value = obj.value;
+    console.log(name_value)
+
+
+
+
+    var http = createObject(); //AJAX
+
+    http.open('get',"/Core/del.php?id="+id_delete);
+    http.onreadystatechange = function() {
+        if(http.readyState == 4){
+            var response = http.responseText;
+            console.log(response);
+            document.getElementById('res_del').innerHTML = response;
+        }
+    }
+    http.send(null);
+
+
+}
+
+function createObject() {
+    var request_type;
+    var browser = navigator.appName;
+
+    if(browser == "Microsoft Internet Explorer"){
+        request_type = new ActiveXObject("Microsoft.XMLHTTP");
+    } else {
+        request_type = new XMLHttpRequest();
+    }
+    return request_type;
+}
+
+function searchResults() {
+    if(http.readyState == 4){
+        var response = http.responseText;
+        console.log(response);
+        document.getElementById('res_del').innerHTML = response;
+    }
+}
+
+
+
+
 
 
 
