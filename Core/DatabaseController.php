@@ -76,5 +76,16 @@ class DatabaseController {
 
     }
 
+    public function requestWords($filed,$table)
+    {
+
+        $sql = 'SELECT '.$filed.' FROM '.$table;
+
+        $array = $this->dbconnect->query($sql);
+
+       return $array;
+
+    }
+
 }
 
