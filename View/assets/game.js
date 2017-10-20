@@ -2,6 +2,30 @@
  * Created by user on 18.10.2017.
  */
 // The block is AJAX for send word to server
+
+function send(word) {
+
+    var xhr = new XMLHttpRequest();
+    console.log(word);
+    var word = encodeURI(word);
+    console.log(word);
+
+
+    xhr.open('get',"/Core/startup.php?word="+word);
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4){
+            var response = xhr.responseText;
+            console.log(response);
+
+            document.getElementById('debug2').innerHTML = '<p>'+response+'</p>';
+            
+        }
+    }
+    xhr.send(null);
+
+}
+
+
 function createObject() {
     var request_type;
     var browser = navigator.appName;
@@ -14,30 +38,22 @@ function createObject() {
     return request_type;
 }
 
-var xhr = createObject();
 
-function searchResults() {
-    if(xhr.readyState == 4&& this.status == 200){
-        var response = xhr.responseText;
-        document.getElementById('debug').innerHTML = response;
-    }
-}
 
 // end AJAX
 
-
-
-
 // action
-
+var tmp_arr = [];
 function transfer() {
+
     var word = document.forms.wordform.word.value;
-    console.log(word); //debug
 
-    //validation
-    valid(word);
+    var parametr = valid(word);
 
-    check_to_repeat(word);
+    if (parametr) {
+        send(word);
+    }
+
 }
 
 
@@ -46,6 +62,7 @@ function valid(word) {
 
     if (3>=word.length){
         document.getElementById('debug').innerHTML = "Ваше слово слишком короткое";
+        return false;
     }
 
     // проверка на гласные а, о, и, е, ё, э, ы, у, ю, я
@@ -64,63 +81,20 @@ function valid(word) {
 
     // code
 
-    var check = check_to_repeat(word);
+    //проверка на свопадение
 
-    if (check) {
-        // слово в соответствующее поле
-    }
-
-
-}
-
-function check_to_repeat(word){ // проверяем и запоминаем
-
-    // filter
-
-    myArray = stackWords();
-
-    myArray = myArray.filter(function(x) {
-        return x !== undefined && x !== null;
-    });
-
-    console.log(myArray);
-
-    var parametr = myArray.indexOf(word);
-
-    if (-1==parametr){
-        stackWords(word);
-
+    if (tmp_arr.indexOf(word)) {
+        tmp_arr.push(word);
+        console.log(tmp_arr);
+        document.getElementById('debug').innerHTML = word;
+        // ход computer
         return true;
-    }else{
-
-        if (isNumber(parametr)) {
-            document.getElementById('debug').innerHTML = "Уже было";
-            return false;
-        }
+    } else {
+        document.getElementById('debug').innerHTML = "Уже было, придумай другое";
+        return false;
     }
-
-
-
-    //closure
-
-    function stackWords() {
-        var numberOfCalls = [];
-        if (arguments.length!=0)
-            var w = arguments[0];
-        return function(w) {
-            numberOfCalls.push(w);
-            console.log(numberOfCalls);
-            return numberOfCalls;
-        }
-
-    }
-
-
-
-
-
-
-
-
 
 }
+
+
+

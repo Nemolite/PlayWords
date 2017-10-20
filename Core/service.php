@@ -8,7 +8,7 @@
  */
 
 //print_r($_REQUEST);
-//echo "ok";
+echo "ok";
 //echo "<br>";
 
 // echo "<pre>";
@@ -18,17 +18,7 @@
 //echo "ok";
 //echo $_GET[id];
 
-if (!empty($_GET[id])){
 
-    //require $_SERVER['DOCUMENT_ROOT'] . '/Core/'.DatabaseController.'.'.php;
-    //use DatabaseController;
-    $class = $_SERVER['DOCUMENT_ROOT'].'/Core/'.DatabaseController.'()';
-    echo $class;
-    $del = new $class;
-
-    echo ($del->del($_GET[id])) ? 1 : 0;
-
-}
 
 
 

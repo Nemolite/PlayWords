@@ -40,7 +40,15 @@ try {
          if (!empty($parse_query)) {
              $tmp_id = explode ( '=' , $parse_query);//id=<numder>
 
-             Router::dispacher_delete($tmp_id[1]);//$tmp_id[1] = id for delete
+             if (is_int($tmp_id)) {
+                 Router::dispacher_delete($tmp_id[1]);//$tmp_id[1] = id for delete
+             } else {
+                 //
+                 echo "startup";
+                 echo $tmp_id[1];
+             }
+
+
 
            }
 
