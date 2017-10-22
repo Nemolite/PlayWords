@@ -101,16 +101,17 @@ class Router {
 
     }
 
-    public static  function dispacher_delete($id)
+    public static function dispacher_delete($id)
     {
-        $db = new DatabaseController();
-        $db->delete_word($id);
-        //echo $id;
+
+        $del = new DatabaseController();
+        $del->delete_word($id);
+
     }
 
-    public static  function dispacher_locicGame($word)
+    public static  function dispacher_logicsGame($word)
     {
-        $locic = new GameController();
-        $locic->locicGame($word);
+        $game = new GameController();
+        $game->logicsGame($word);
     }
 }

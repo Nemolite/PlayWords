@@ -41,15 +41,16 @@ try {
          if (!empty($parse_query)) {
              $tmp_id = explode ( '=' , $parse_query);//id=<numder>
 
-             if (is_int($tmp_id)) {
+             if ($tmp_id[0]==="id") { // from script.js
+
                  Router::dispacher_delete($tmp_id[1]);//$tmp_id[1] = id for delete
-             } else {
+             }
+
+             if ($tmp_id[0]==="word") { // from game.js
                  //
-                 echo urldecode ( $tmp_id[1] );
-                 // передаем слово в диспечер
 
                  $word = urldecode($tmp_id[1]);
-                 Router::dispacher_locicGame($word);
+                 Router::dispacher_logicsGame($word);
 
              }
 

@@ -52,17 +52,14 @@ class GameController {
            }
       }
 
-    public function locicGame($word)
+    public function logicsGame($word)
     {
-         // достаем переданное слово
+         
 
         $lenght = mb_strlen($word);
 
         $letter = mb_substr ( $word , $lenght-1, $lenght );
 
-        echo "<br>";
-        echo $letter;
-        echo "<br>";
 
         if ($letter ==="ь"){
             $letter = mb_substr ( $word , $lenght-2, -1 );
@@ -70,13 +67,6 @@ class GameController {
 
         $request = new DatabaseController();
         $arr_words = $request->requestWordsArray($letter);
-
-        echo "<pre>";
-        print_r($arr_words);
-        echo "</pre>";
-
-    //phpinfo();
-
 
 
      }

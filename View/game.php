@@ -18,13 +18,13 @@
     <div class="main">
         <div class="left">
         <h3>Ваши ходы</h3>
-            <p id="result_user">слово</p>
+            <div id="result_user"><p>слово</p></div>
 
 
         </div>
         <div class="right">
             <h3>Computer</h3>
-            <p id="result_computer">огонь</p>
+            <div id="result_computer"><p>огонь</p></div>
 
 
         </div>
