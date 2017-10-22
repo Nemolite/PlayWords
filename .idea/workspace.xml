@@ -57,12 +57,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controller/GameController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.482821" vertical-offset="987" max-vertical-offset="1628">
-              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-12.807693" vertical-offset="1185" max-vertical-offset="1848">
+              <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+              <folding>
+                <element signature="e#111#139#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Core/DatabaseController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5925926" vertical-offset="1880" max-vertical-offset="2618">
+              <caret line="105" column="65" selection-start-line="105" selection-start-column="65" selection-end-line="105" selection-end-column="65" />
+              <folding>
+                <marker date="1508673808964" expanded="true" signature="1277:1339" placeholder="INSERT INTO ..." />
+                <marker date="1508673808964" expanded="true" signature="1769:1807" placeholder="DELETE FROM ..." />
+                <marker date="1508673808964" expanded="true" signature="1958:1975" placeholder="SELECT words..." />
+                <marker date="1508673808964" expanded="true" signature="1958:1986" placeholder="SELECT words..wordstable..." />
+                <marker date="1508673808964" expanded="true" signature="1958:1986" placeholder="SELECT words..wordstable..." />
+                <marker date="1508673808964" expanded="true" signature="1958:1986" placeholder="SELECT words..wordstable..." />
+                <marker date="1508673808964" expanded="true" signature="1958:1986" placeholder="SELECT words..wordstable..." />
+                <marker date="1508673808964" expanded="true" signature="1958:2003" placeholder="SELECT words..wordstable..." />
+                <marker date="1508673808964" expanded="true" signature="1958:2004" placeholder="SELECT words..wordstable..." />
+                <marker date="1508673808964" expanded="true" signature="1958:2005" placeholder="SELECT words..wordstable..." />
+                <marker date="1508673808964" expanded="true" signature="1958:2015" placeholder="SELECT words..wordstable..." />
+                <marker date="1508673808964" expanded="true" signature="1958:2017" placeholder="SELECT words..wordstable..." />
+                <marker date="1508673808964" expanded="true" signature="1958:2018" placeholder="SELECT words..wordstable..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,7 +166,6 @@
         <option value="$PROJECT_DIR$/Controller/AdminController.php" />
         <option value="$PROJECT_DIR$/Core/ViewController.php" />
         <option value="$PROJECT_DIR$/Core/del.php" />
-        <option value="$PROJECT_DIR$/Core/DatabaseController.php" />
         <option value="$PROJECT_DIR$/View/admin.php" />
         <option value="$PROJECT_DIR$/View/assets/script.js" />
         <option value="$PROJECT_DIR$/Core/service.php" />
@@ -149,6 +174,7 @@
         <option value="$PROJECT_DIR$/Core/router.php" />
         <option value="$PROJECT_DIR$/Core/startup.php" />
         <option value="$PROJECT_DIR$/Controller/GameController.php" />
+        <option value="$PROJECT_DIR$/Core/DatabaseController.php" />
       </list>
     </option>
   </component>
@@ -327,7 +353,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -670,13 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/DatabaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64444447" vertical-offset="1884" max-vertical-offset="2520">
-          <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/config.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1761658" vertical-offset="0" max-vertical-offset="579">
@@ -761,9 +780,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Controller/GameController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.482821" vertical-offset="987" max-vertical-offset="1628">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-12.807693" vertical-offset="1185" max-vertical-offset="1848">
+          <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+          <folding>
+            <element signature="e#111#139#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/DatabaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5925926" vertical-offset="1880" max-vertical-offset="2618">
+          <caret line="105" column="65" selection-start-line="105" selection-start-column="65" selection-end-line="105" selection-end-column="65" />
+          <folding>
+            <marker date="1508673808964" expanded="true" signature="1277:1339" placeholder="INSERT INTO ..." />
+            <marker date="1508673808964" expanded="true" signature="1769:1807" placeholder="DELETE FROM ..." />
+            <marker date="1508673808964" expanded="true" signature="1958:1975" placeholder="SELECT words..." />
+            <marker date="1508673808964" expanded="true" signature="1958:1986" placeholder="SELECT words..wordstable..." />
+            <marker date="1508673808964" expanded="true" signature="1958:1986" placeholder="SELECT words..wordstable..." />
+            <marker date="1508673808964" expanded="true" signature="1958:1986" placeholder="SELECT words..wordstable..." />
+            <marker date="1508673808964" expanded="true" signature="1958:1986" placeholder="SELECT words..wordstable..." />
+            <marker date="1508673808964" expanded="true" signature="1958:2003" placeholder="SELECT words..wordstable..." />
+            <marker date="1508673808964" expanded="true" signature="1958:2004" placeholder="SELECT words..wordstable..." />
+            <marker date="1508673808964" expanded="true" signature="1958:2005" placeholder="SELECT words..wordstable..." />
+            <marker date="1508673808964" expanded="true" signature="1958:2015" placeholder="SELECT words..wordstable..." />
+            <marker date="1508673808964" expanded="true" signature="1958:2017" placeholder="SELECT words..wordstable..." />
+            <marker date="1508673808964" expanded="true" signature="1958:2018" placeholder="SELECT words..wordstable..." />
+          </folding>
         </state>
       </provider>
     </entry>

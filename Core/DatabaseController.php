@@ -100,5 +100,19 @@ class DatabaseController {
 
     }
 
+    public function requestWordsArray($letter)
+    {
+
+        $sql = 'SELECT words FROM wordstable WHERE words LIKE "'.$letter.'%"';
+        // SELECT words FROM wordstable WHERE words LIKE "а%"
+
+       $array = $this->dbconnect->query($sql);
+
+        $result = $array->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+
+    }
+
 }
 

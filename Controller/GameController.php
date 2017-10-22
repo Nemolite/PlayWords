@@ -8,6 +8,7 @@
 
 namespace Controller;
 
+use Core\DatabaseController;
 use Core\ViewController;
 use Controller\LoginController as Login;
 use Helper\Auth;
@@ -66,6 +67,13 @@ class GameController {
         if ($letter ==="ь"){
             $letter = mb_substr ( $word , $lenght-2, -1 );
         }
+
+        $request = new DatabaseController();
+        $arr_words = $request->requestWordsArray($letter);
+
+        echo "<pre>";
+        print_r($arr_words);
+        echo "</pre>";
 
     //phpinfo();
 
