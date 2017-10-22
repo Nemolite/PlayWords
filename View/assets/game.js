@@ -18,7 +18,7 @@ function send(word) {
             console.log(response);
 
             document.getElementById('debug2').innerHTML = '<p>'+response+'</p>';
-            
+
         }
     }
     xhr.send(null);
@@ -51,6 +51,7 @@ function transfer() {
     var parametr = valid(word);
 
     if (parametr) {
+         // ход компьютера, отправим слово на сервер
         send(word);
     }
 
@@ -87,7 +88,7 @@ function valid(word) {
         tmp_arr.push(word);
         console.log(tmp_arr);
         document.getElementById('debug').innerHTML = word;
-        // ход computer
+
         return true;
     } else {
         document.getElementById('debug').innerHTML = "Уже было, придумай другое";

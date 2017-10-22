@@ -12,6 +12,7 @@ use Helper\Tools; //It is only for debuging
 use Core\Router;
 use Core\DatabaseController;
 
+
 try {
 
     $debug = new Tools(); // debug
@@ -44,11 +45,13 @@ try {
                  Router::dispacher_delete($tmp_id[1]);//$tmp_id[1] = id for delete
              } else {
                  //
-                 echo "startup";
-                 echo $tmp_id[1];
+                 echo urldecode ( $tmp_id[1] );
+                 // передаем слово в диспечер
+
+                 $word = urldecode($tmp_id[1]);
+                 Router::dispacher_locicGame($word);
+
              }
-
-
 
            }
 

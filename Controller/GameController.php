@@ -51,11 +51,26 @@ class GameController {
            }
       }
 
-    public function locicGame()
+    public function locicGame($word)
     {
-        //парсим uri
-        // достаем переданное слово
-        // проверяем его по базе
-    }
+         // достаем переданное слово
+
+        $lenght = mb_strlen($word);
+
+        $letter = mb_substr ( $word , $lenght-1, $lenght );
+
+        echo "<br>";
+        echo $letter;
+        echo "<br>";
+
+        if ($letter ==="ь"){
+            $letter = mb_substr ( $word , $lenght-2, -1 );
+        }
+
+    //phpinfo();
+
+
+
+     }
 
 }

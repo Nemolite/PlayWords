@@ -84,31 +84,11 @@ class Router {
                        $obj->rgisterUser();
                    }
 
-                   if ($controller=='GameController'){
-                       $obj->locicGame();
-                   }
+                  // if ($controller=='GameController'){
+                  //     $obj->locicGame();
+                  // }
 
-                   //переход на метод логики игры, или вызов метода логики игры
-
-
-                   /*
-                   if (null !== self::actionDipacher()){
-                       $action = self::actionDipacher();
-
-                       if ($obj->$action()){
-
-                          // $game = new GameController();
-                           $obj->display();
-
-                       } else {
-                           //
-                       }
-
-                   }
-                   */
-
-
-               }else{
+                }else{
 
                    echo "does not exist";
                }
@@ -120,25 +100,17 @@ class Router {
 
 
     }
-/*
-    public function actionDipacher()
-    {
-       $action = Router::getRoute();
-       if(!empty($action['action'])){
-           return $action['action'];
-       }else {
-           return null;
-       }
 
-
-
-
-    }
-*/
-    public function dispacher_delete($id)
+    public static  function dispacher_delete($id)
     {
         $db = new DatabaseController();
         $db->delete_word($id);
         //echo $id;
+    }
+
+    public static  function dispacher_locicGame($word)
+    {
+        $locic = new GameController();
+        $locic->locicGame($word);
     }
 }
