@@ -15,7 +15,10 @@ function send(word) {
             console.log(response);
             var node =document.createElement('p');
             node.innerHTML = '<p>'+response+'</p>';
-// разобрать response
+
+            // разобрать response который придет от сервера
+            // ожидается массив из двух слов result (word_user, word_comuter)
+
             result_user.appendChild(node);
             //document.getElementById('debug2').innerHTML = '<p>'+response+'</p>';
 

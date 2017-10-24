@@ -24,7 +24,6 @@ class GameController {
                 $user = new Login();
                 $user->send();
 
-          //  print_r($_SESSION);
 
                if (isset($_SESSION['id'])) { //
 
@@ -52,10 +51,22 @@ class GameController {
            }
       }
 
+    /**
+     * @param $word from game.js (user word)
+     */
     public function logicsGame($word)
     {
-         
+        $req = new DatabaseController();
+        $tmpreg = $req->insertWordTmp($word);
 
+
+       echo $tmpreg;
+
+
+     }
+
+    public function requestArray($word)
+    {
         $lenght = mb_strlen($word);
 
         $letter = mb_substr ( $word , $lenght-1, $lenght );
@@ -67,8 +78,9 @@ class GameController {
 
         $request = new DatabaseController();
         $arr_words = $request->requestWordsArray($letter);
+        return $arr_words;
+    }
 
 
-     }
 
 }

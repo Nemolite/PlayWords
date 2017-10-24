@@ -78,6 +78,22 @@ class DatabaseController {
 
     }
 
+    public function insertWordTmp($word)
+    {
+        //$sql= "INSERT IGNORE INTO `tmptable` (tmpwords) VALUES (:word)";
+        $sql2 ="INSERT INTO `tmptable` (tmpwords)
+                SELECT DISTINCT :word
+                FROM tmptable
+                WHERE NOT EXISTS
+                (SELECT tmpwords FROM tmptable WHERE tmpwords = :word)";
+
+        $ins = $this->dbconnect->prepare($sql2);
+        $ins->bindParam(':word',$word);
+        $param = $ins->execute();
+
+        return  $param ? true : false;
+    }
+
     public function requestWords($filed,$table)
     {
 

@@ -50,6 +50,7 @@ try {
                  //
 
                  $word = urldecode($tmp_id[1]);
+
                  Router::dispacher_logicsGame($word);
 
              }

@@ -7,16 +7,10 @@
  * Time: 12:53
  */
 
-//print_r($_REQUEST);
-echo "ok";
-//echo "<br>";
 
-// echo "<pre>";
-// print_r($_GET);
-// echo "</pre>";
-//
-//echo "ok";
-//echo $_GET[id];
+echo "ok";
+$a = 1;
+$b = 1;
 
 
 
