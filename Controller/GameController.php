@@ -57,10 +57,36 @@ class GameController {
     public function logicsGame($word)
     {
         $req = new DatabaseController();
-        $tmpreg = $req->insertWordTmp($word);
 
+        // проверка уже было это слово или нет
 
-       echo $tmpreg;
+        if ( $req->selectWordTmp($word) ){
+            //echo "все нормально";
+            $req->insertWordTmp($word); // заносим в во временную базу члов
+
+            $arrOnLetter =$this->requestArray($word); // вернет массив по последней букве
+
+           // print_r($arrOnLetter);
+
+            $arrTmp = $req->requestWordsTmpAll();
+
+            // сравнить 2 масива $arrOnLetter и $arrTmp
+            // и убрать из $arrOnLetter то что есть в $arrTmp
+
+            // потом случайным образом выбрать из оставшихся слово $compword
+            //занести его во временную базу $compword
+            // потом формировать массив [$word,$compword]
+
+            // и отправить его js скрипту на обработку
+
+           // print_r($arrTmp);
+            //
+
+            //DELETE FROM `tmptable` WHERE 1
+
+        } else {
+            echo 0; //0 - признак того что было уже такое слово
+        }
 
 
      }

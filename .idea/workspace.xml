@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Controller/GameController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8846154" vertical-offset="943" max-vertical-offset="1826">
-              <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.9163498" vertical-offset="1080" max-vertical-offset="2398">
+              <caret line="79" column="54" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -79,20 +79,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DatabaseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Core/DatabaseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5964912" vertical-offset="1498" max-vertical-offset="2970">
-              <caret line="87" column="69" selection-start-line="87" selection-start-column="69" selection-end-line="87" selection-end-column="69" />
+            <state vertical-scroll-proportion="-11.846154" vertical-offset="2112" max-vertical-offset="3542">
+              <caret line="115" column="45" selection-start-line="115" selection-start-column="45" selection-end-line="115" selection-end-column="45" />
               <folding>
-                <marker date="1508831592194" expanded="true" signature="1277:1339" placeholder="INSERT INTO ..." />
-                <marker date="1508831592194" expanded="true" signature="1589:1644" placeholder="INSERT INTO ..." />
-                <marker date="1508831592194" expanded="true" signature="1664:1919" placeholder="INSERT INTO ..." />
-                <marker date="1508831592194" expanded="true" signature="1713:1868" placeholder="SELECT DISTI..numbers..." />
-                <marker date="1508831592194" expanded="true" signature="1713:1919" placeholder="SELECT DISTI..numbers..." />
-                <marker date="1508831592194" expanded="true" signature="1815:1867" placeholder="SELECT sim_n..numbers..." />
-                <marker date="1508831592194" expanded="true" signature="2286:2324" placeholder="DELETE FROM ..." />
-                <marker date="1508831592194" expanded="true" signature="2475:2535" placeholder="SELECT words..wordstable..." />
+                <marker date="1508835289398" expanded="true" signature="1277:1339" placeholder="INSERT INTO ..." />
+                <marker date="1508835289398" expanded="true" signature="1587:1642" placeholder="INSERT INTO ..." />
+                <marker date="1508835289398" expanded="true" signature="1664:1926" placeholder="INSERT INTO ..." />
+                <marker date="1508835289398" expanded="true" signature="1715:1876" placeholder="SELECT DISTI..numbers..." />
+                <marker date="1508835289398" expanded="true" signature="1715:1926" placeholder="SELECT DISTI..numbers..." />
+                <marker date="1508835289398" expanded="true" signature="1823:1875" placeholder="SELECT sim_n..numbers..." />
+                <marker date="1508835289398" expanded="true" signature="2112:2135" placeholder="SELECT `tmpt..." />
+                <marker date="1508835289398" expanded="true" signature="2112:2135" placeholder="SELECT `tmpt..." />
+                <marker date="1508835289398" expanded="true" signature="2112:2166" placeholder="SELECT `tmpw..." />
+                <marker date="1508835289398" expanded="true" signature="2112:2179" placeholder="SELECT `tmpt..." />
+                <marker date="1508835289398" expanded="true" signature="2468:2475" placeholder="SELECT '.${$..." />
+                <marker date="1508835289398" expanded="true" signature="2468:2499" placeholder="SELECT '.${$..." />
+                <marker date="1508835289398" expanded="true" signature="2468:2547" placeholder="SELECT '.${$..." />
+                <marker date="1508835289398" expanded="true" signature="2876:2914" placeholder="DELETE FROM ..." />
+                <marker date="1508835289398" expanded="true" signature="3065:3125" placeholder="SELECT words..wordstable..." />
               </folding>
             </state>
           </provider>
@@ -144,8 +151,8 @@
         <option value="$PROJECT_DIR$/Core/service.php" />
         <option value="$PROJECT_DIR$/View/assets/game.js" />
         <option value="$PROJECT_DIR$/Core/startup.php" />
-        <option value="$PROJECT_DIR$/Controller/GameController.php" />
         <option value="$PROJECT_DIR$/Core/DatabaseController.php" />
+        <option value="$PROJECT_DIR$/Controller/GameController.php" />
       </list>
     </option>
   </component>
@@ -793,28 +800,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/GameController.php">
+    <entry file="file://$PROJECT_DIR$/Core/DatabaseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8846154" vertical-offset="943" max-vertical-offset="1826">
-          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
-          <folding />
+        <state vertical-scroll-proportion="-11.846154" vertical-offset="2112" max-vertical-offset="3542">
+          <caret line="115" column="45" selection-start-line="115" selection-start-column="45" selection-end-line="115" selection-end-column="45" />
+          <folding>
+            <marker date="1508835289398" expanded="true" signature="1277:1339" placeholder="INSERT INTO ..." />
+            <marker date="1508835289398" expanded="true" signature="1587:1642" placeholder="INSERT INTO ..." />
+            <marker date="1508835289398" expanded="true" signature="1664:1926" placeholder="INSERT INTO ..." />
+            <marker date="1508835289398" expanded="true" signature="1715:1876" placeholder="SELECT DISTI..numbers..." />
+            <marker date="1508835289398" expanded="true" signature="1715:1926" placeholder="SELECT DISTI..numbers..." />
+            <marker date="1508835289398" expanded="true" signature="1823:1875" placeholder="SELECT sim_n..numbers..." />
+            <marker date="1508835289398" expanded="true" signature="2112:2135" placeholder="SELECT `tmpt..." />
+            <marker date="1508835289398" expanded="true" signature="2112:2135" placeholder="SELECT `tmpt..." />
+            <marker date="1508835289398" expanded="true" signature="2112:2166" placeholder="SELECT `tmpw..." />
+            <marker date="1508835289398" expanded="true" signature="2112:2179" placeholder="SELECT `tmpt..." />
+            <marker date="1508835289398" expanded="true" signature="2468:2475" placeholder="SELECT '.${$..." />
+            <marker date="1508835289398" expanded="true" signature="2468:2499" placeholder="SELECT '.${$..." />
+            <marker date="1508835289398" expanded="true" signature="2468:2547" placeholder="SELECT '.${$..." />
+            <marker date="1508835289398" expanded="true" signature="2876:2914" placeholder="DELETE FROM ..." />
+            <marker date="1508835289398" expanded="true" signature="3065:3125" placeholder="SELECT words..wordstable..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/DatabaseController.php">
+    <entry file="file://$PROJECT_DIR$/Controller/GameController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5964912" vertical-offset="1498" max-vertical-offset="2970">
-          <caret line="87" column="69" selection-start-line="87" selection-start-column="69" selection-end-line="87" selection-end-column="69" />
-          <folding>
-            <marker date="1508831592194" expanded="true" signature="1277:1339" placeholder="INSERT INTO ..." />
-            <marker date="1508831592194" expanded="true" signature="1589:1644" placeholder="INSERT INTO ..." />
-            <marker date="1508831592194" expanded="true" signature="1664:1919" placeholder="INSERT INTO ..." />
-            <marker date="1508831592194" expanded="true" signature="1713:1868" placeholder="SELECT DISTI..numbers..." />
-            <marker date="1508831592194" expanded="true" signature="1713:1919" placeholder="SELECT DISTI..numbers..." />
-            <marker date="1508831592194" expanded="true" signature="1815:1867" placeholder="SELECT sim_n..numbers..." />
-            <marker date="1508831592194" expanded="true" signature="2286:2324" placeholder="DELETE FROM ..." />
-            <marker date="1508831592194" expanded="true" signature="2475:2535" placeholder="SELECT words..wordstable..." />
-          </folding>
+        <state vertical-scroll-proportion="0.9163498" vertical-offset="1080" max-vertical-offset="2398">
+          <caret line="79" column="54" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
