@@ -66,9 +66,20 @@ class GameController {
 
             $arrOnLetter =$this->requestArray($word); // вернет массив по последней букве
 
-           // print_r($arrOnLetter);
 
             $arrTmp = $req->requestWordsTmpAll();
+
+            $result = array_diff ( $arrOnLetter , $arrTmp );
+
+            //$req->deleteTmpBasa();
+            //delete временной базы слов
+
+            //$com_word = array_rand($result);
+            //echo "<br>";
+            echo "<pre>";
+            print_r($result);
+            echo "</pre>";
+            //echo "<br>";
 
             // сравнить 2 масива $arrOnLetter и $arrTmp
             // и убрать из $arrOnLetter то что есть в $arrTmp

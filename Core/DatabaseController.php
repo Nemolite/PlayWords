@@ -114,10 +114,24 @@ class DatabaseController {
         $sql = "SELECT `tmpwords` FROM tmptable";
 
         $res = $this->dbconnect->query($sql);
-        $array = $res->fetchAll(PDO::FETCH_ASSOC);
+        $result = $res->fetchAll(PDO::FETCH_ASSOC);
 
-        return $array;
+        foreach ($result as $value){
+            foreach($value as $el){
+                $arr[] = $el;
+            }
 
+        }
+
+        return $arr;
+
+    }
+
+    public function deleteTmpBasa()
+    {
+        $sql = "DELETE FROM tmptable WHERE 1";
+
+        $this->dbconnect->exec($sql);
     }
 
     public function requestWords($filed,$table)
@@ -152,7 +166,14 @@ class DatabaseController {
 
         $result = $array->fetchAll(PDO::FETCH_ASSOC);
 
-        return $result;
+        foreach ($result as $value){
+            foreach($value as $el){
+                $arr[] = $el;
+            }
+
+        }
+
+        return $arr;
 
     }
 
