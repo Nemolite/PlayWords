@@ -62,24 +62,37 @@ class GameController {
 
         if ( $req->selectWordTmp($word) ){
             //echo "все нормально";
-            $req->insertWordTmp($word); // заносим в во временную базу члов
+            $req->insertWordTmp($word); // заносим в во временную базу cлов
 
             $arrOnLetter =$this->requestArray($word); // вернет массив по последней букве
 
 
+            if (empty($arrOnLetter)){
+                echo "я проиграл, я не знаю больше слов";
+            } else {
+
             $arrTmp = $req->requestWordsTmpAll();
+
 
             $result = array_diff ( $arrOnLetter , $arrTmp );
 
+
+
+                if (empty($result)){
+                    echo "я проиграл, все слова которые нужно было уже названы";
+                }
+
+
+                echo "<pre>";
+                print_r($result[array_rand($result)]);
+                echo "</pre>";
+
+
+                $req->insertWordTmp($result[array_rand($result)]); // заносим в во временную базу cлов
+
+            }
             //$req->deleteTmpBasa();
             //delete временной базы слов
-
-            //$com_word = array_rand($result);
-            //echo "<br>";
-            echo "<pre>";
-            print_r($result);
-            echo "</pre>";
-            //echo "<br>";
 
             // сравнить 2 масива $arrOnLetter и $arrTmp
             // и убрать из $arrOnLetter то что есть в $arrTmp
