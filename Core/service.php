@@ -1,86 +1,70 @@
 <?php
-
-
-class Request
+class Test
 {
-    public $user_select;
-    public $user_answer;
 
-    public $server_select;
-    public $server_answer;
+    /**
+     * @param $period is string (only 'hour' or 'day')
+     * @param $method mayby numeric or string
+     * @param $count_max is only numeric
+     *
+     * @return bool (false or true)
+     *
+     * @throws Exception if agrgument 1 none or something other than these 'hour','day'
+     */
 
-    public $result_select; //isCorrect
-    public $result_answer; //score
+    //метод извлекает данные за перод (или за 30 минут или за 12 часов)
+    // из хранилища $redis и проверят либо данные
+    // за 30 минут, либо за 12 часов сравнивая его с максимальным
+    //возвращает true когда все ОК
 
-    public  function request($select,$answer) //from user
-    //"exerciseId": "select1"
-    //"answer": 0
+    // если период не задан возникает ошибка
+
+    // если сумма извлеченных данных меньше чем $count_max
+    // ключ инкрементируется и удаляется по истечении суток
+
+    // метод предназначен для отслеживание скачка объемов продаж за определенный период
+
+    public static function guard_count($period, $method, $count_max)
     {
-       $this->user_select= $select["exerciseId"];
-       $this->user_answer = $answer["answer"];
+        if ($period == 'hour') {
+            $tp = floor(time() / 1800); // 30 минут
 
-       $this-> inBasa($this->user_select,$this->user_answer); // в базу
+        } else if ($period == 'day') {
+            $tp = floor(time() / (3600 * 12)); // 12 часов
 
-       $this->fromBase(); //из базы правильные результаты
+        } else throw new Exception(); // в первом аргументе метода всегда ожидается
+                                      // 'hour' или 'day' иначе будет исключение
+                                      // типа Fatal error: Uncaught Exception
+                                      // если 1 аргумента вовсе не будет то в добавок
+                                      // интерпретатор
+                                      // выбросит предупреждение
+                                      // на подобие Warning: Missing argument 1
 
-       $this->compare(); // проверка и начисление балов
 
-       $this->result_answer = $this->ball(); //баллы
+        if (!\Config::get('zoon', 'is_production')) return false;
+        // метод get вернет определенные занчение для подключения
+        // если нет встроенного статического метода get метод возвратит false
 
-       $this->response(); // отправка резульата ученику
+        $redis = RedisProvider::getInstance();
+        // из хранилища достается объект, который хранит данные в виде ключ значение ()
+        // другими словами сервис структур данных
 
-    }
 
-    public function inBasa($select,$answer)
-    {
-        //отправка данных на сервер
-    }
+        $keyP = 'guard' . $method . ($tp - 1); // собираем ключи , чтобы потом извлеч данные по этим ключам
+              //  $tp - 1 - означает за прошлый период  у него свой ключ $keyP
+        $key = 'guard' . $method . $tp; // для $redis , ключ вида guardМЕТОДчисло - это позволительно
 
-    public function fromBase()
-    {
-        //запрос к базе данных
-        $this->server_select = "banana"; //вариант правильного ответа из базы
-        $this->server_answer = "correct text";//вариант правильного текста из базы
+        // сумма данных за прошлый период и за настоящий должно быть больше $count_max
+        if ($redis->get($key) + $redis->get($keyP) > $count_max) return true;
+        // извлекаем данные сравниваем его с максимальной величиной
+        // можно проверять за период 30 минут, если задать в 1 аргументе hour
+        // либо же за период 12 часов, если 1 аргумент day
 
-    }
-
-    public function compare()
-
-    {
-        if ($this->user_select === $this->server_select ){
-           $this->result_select = true;
-        } else {
-            $this->result_select = false;
-        }
-
-    }
-
-    public function response()
-    {
-
-        return [
-            "isCorrect"=>$this->result_select,
-            "score"=>$this->result_answer
-        ];
-    }
-
-    public function ball()
-    {
-        //o	общего количества возможных ответов в конкретном упражнении;
-        //максимального балла для упражнения.
-        $allBall = 3;
-        $max = 3;
-        $ball = $allBall + $max;
-
-        if ($this->user_answer===$this->server_answer){
-            return   $ball/3; //1
-        } else {
-            return  $ball/6 ; // -0.5
-        }
-
+        $redis->incr($key); // увеличивает (инкриментируем) данные по этому ключу
+        $redis->expire($key, 86400); // устанавливаем тайм-оут на ключ в  1 сутки а после удалаем
+        return false;
     }
 }
-
 
 
 

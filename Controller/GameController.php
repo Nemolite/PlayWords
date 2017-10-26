@@ -58,6 +58,10 @@ class GameController {
     {
         $req = new DatabaseController();
 
+        //$req->deleteTmpBasa(); // удаление слов из временной базы
+
+           // $req->transference(); //перенос слов из временной базы в основную
+
         // проверка уже было это слово или нет
 
         if ( $req->selectWordTmp($word) ){
@@ -66,22 +70,17 @@ class GameController {
 
             $arrOnLetter =$this->requestArray($word); // вернет массив по последней букве
 
-
             if (empty($arrOnLetter)){
                 echo "я проиграл, я не знаю больше слов";
             } else {
 
             $arrTmp = $req->requestWordsTmpAll();
 
-
             $result = array_diff ( $arrOnLetter , $arrTmp );
-
-
 
                 if (empty($result)){
                     echo "я проиграл, все слова которые нужно было уже названы";
                 }
-
 
                 echo "<pre>";
                 print_r($result[array_rand($result)]);
@@ -91,22 +90,13 @@ class GameController {
                 $req->insertWordTmp($result[array_rand($result)]); // заносим в во временную базу cлов
 
             }
-            //$req->deleteTmpBasa();
-            //delete временной базы слов
 
-            // сравнить 2 масива $arrOnLetter и $arrTmp
-            // и убрать из $arrOnLetter то что есть в $arrTmp
-
-            // потом случайным образом выбрать из оставшихся слово $compword
             //занести его во временную базу $compword
             // потом формировать массив [$word,$compword]
 
             // и отправить его js скрипту на обработку
 
-           // print_r($arrTmp);
-            //
 
-            //DELETE FROM `tmptable` WHERE 1
 
         } else {
             echo 0; //0 - признак того что было уже такое слово

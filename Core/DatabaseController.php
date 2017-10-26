@@ -177,5 +177,20 @@ class DatabaseController {
 
     }
 
+    public function transference()
+    {
+
+        $sql = "INSERT INTO wordstable(words)
+                SELECT tmptable.tmpwords FROM
+                tmptable";
+
+        $this->dbconnect->exec($sql);
+
+        $sql_delete_dublicat = "DELETE * FROM wordstable WHERE id_words<>id_words AND words=words;";
+
+        $this->dbconnect->exec($sql_delete_dublicat );
+
+    }
+
 }
 
