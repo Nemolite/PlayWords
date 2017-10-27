@@ -12,7 +12,9 @@ function send(word) {
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4){
             var response = xhr.responseText;
-            console.log(response);
+            var res = JSON.parse(response);
+            console.log(res);
+
             var node =document.createElement('p');
             node.innerHTML = '<p>'+response+'</p>';
 
