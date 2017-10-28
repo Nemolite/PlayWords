@@ -12,17 +12,33 @@ function send(word) {
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4){
             var response = xhr.responseText;
-            var res = JSON.parse(response);
-            console.log(res);
 
-            var node =document.createElement('p');
-            node.innerHTML = '<p>'+response+'</p>';
+           // console.log(response);
+
+             arr = response.split(',')
+             console.log(arr);
+             console.log(arr[0]);
+             console.log(arr[1]);
+             console.log(arr[2]);
+             console.log(arr[3]);
+
+             if ("true"===arr[0]){
+                 var rep = "Такое слово уже было"
+                 document.getElementById('debug2').innerHTML = '<p>'+rep+'</p>';
+             }
+
+            var node_user =document.createElement('p');
+            node_user.innerHTML = '<p>'+arr[1]+'</p>';
+
+            var node_computer =document.createElement('p');
+            node_computer.innerHTML = '<p>'+arr[2]+'</p>';
 
             // разобрать response который придет от сервера
             // ожидается массив из двух слов result (word_user, word_comuter)
 
-            result_user.appendChild(node);
-            //document.getElementById('debug2').innerHTML = '<p>'+response+'</p>';
+            result_user.appendChild(node_user);
+            result_computer.appendChild(node_computer);
+           // document.getElementById('debug2').innerHTML = '<p>'+response+'</p>';
 
         }
     }

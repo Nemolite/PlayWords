@@ -15,7 +15,10 @@ use Helper\Auth;
 
 class GameController {
 
-    public $request = [];
+      public $request;
+      public $separator = ",";
+      public $attrib_rep = "false";// false - no repeat or true- repeat
+      public $attrib_lost = "false";// false - no lost or true - lost (not words of computer)
 
     static private $include = false;
 
@@ -65,13 +68,17 @@ class GameController {
 
            // $req->transference(); //перенос слов из временной базы в основную
 
-        // проверка уже было это слово или нет
+        // проверка было это слово или нет
+       // echo $req->selectWordTmp($word);
 
-        if ( $req->selectWordTmp($word) ){
+        if ( !$req->selectWordTmp($word) ) {
 
-            $this->request[0] =  $word;  // 0 - word user, 1 - word comuter
-                                         // 3 - false , if нет слов у компьютера
-                                         // 4 - false , если слово уже было
+            $this->attrib_rep = "true";
+
+            $this->request = $this->attrib_rep.$this->separator.$word;
+
+            echo $this->request;
+        }
 
             //echo "все нормально";
             $req->insertWordTmp($word); // заносим в во временную базу cлов
@@ -80,7 +87,7 @@ class GameController {
 
             if (empty($arrOnLetter)){
                // echo "я проиграл, я не знаю больше слов";
-                $this->request[3] = false;
+                $this->request[2] = false;
             } else {
 
             $arrTmp = $req->requestWordsTmpAll();
@@ -89,7 +96,7 @@ class GameController {
 
                 if (empty($result)){
                   //  echo "я проиграл, все слова которые нужно было уже названы";
-                    $this->request[3] = false;
+                    $this->request[2] = false;
                 }
 
                 $this->request[1] = $result[array_rand($result)];
@@ -108,16 +115,11 @@ class GameController {
             // и отправить его js скрипту на обработку
 
 
-
-        } else {
-           // echo 0; //0 - признак того что было уже такое слово
-            $this->request[4] = false;
-        }
-
          //return $this->request;
         //echo $this->request;
-        //echo '['.implode(",",$this->request).']';
-        echo json_encode($this->request);
+       // $string = implode(", ", $this->request);
+       // echo $string;
+
 
     }
 
