@@ -80,47 +80,56 @@ class GameController {
             echo $this->request;
         }
 
-            //echo "все нормально";
-            $req->insertWordTmp($word); // заносим в во временную базу cлов
+        if ( $req->selectWordTmp($word) ) {
 
-            $arrOnLetter =$this->requestArray($word); // вернет массив по последней букве
+                //echo "все нормально";
+                $req->insertWordTmp($word); // заносим в во временную базу cлово
 
-            if (empty($arrOnLetter)){
-               // echo "я проиграл, я не знаю больше слов";
-                $this->request[2] = false;
-            } else {
+                $arrOnLetter = $this->requestArray($word); // вернет массив по последней букве
+
+                if (empty($arrOnLetter)) {
+                    // echo "я проиграл, я не знаю больше слов";
+
+                    $this->attrib_lost = "true";
+
+                    $this->request = $this->attrib_rep . $this->separator . $word . $this->separator . $this->attrib_lost;
+                    // "false",$word,"true"
+
+                    echo $this->request;
+
+                   // return false;
+                }
+        }
+
+        if (!empty($arrOnLetter)) {
+
 
             $arrTmp = $req->requestWordsTmpAll();
+            $result = array_diff($arrOnLetter, $arrTmp);
 
-            $result = array_diff ( $arrOnLetter , $arrTmp );
+            if (empty($result)) {
+                $this->request = $this->attrib_rep . $this->separator . $word . $this->separator . $this->attrib_lost;
+                // "false",$word,"true"
 
-                if (empty($result)){
-                  //  echo "я проиграл, все слова которые нужно было уже названы";
-                    $this->request[2] = false;
-                }
+                echo $this->request;
+            } else {
 
-                $this->request[1] = $result[array_rand($result)];
-                //echo "<pre>";
-                //print_r($result[array_rand($result)]);
-                //echo "</pre>";
+                $req->insertWordTmp($result[array_rand($result)]);
+                // заносим в во временную базу cлов
 
 
-                $req->insertWordTmp($result[array_rand($result)]); // заносим в во временную базу cлов
+                $this->request = $this->attrib_rep .
+                    $this->separator .
+                    $word .
+                    $this->separator .
+                    $this->attrib_lost .
+                    array_rand($result);
+
+                // "false",$word,"false",$word_computer
+
 
             }
-
-            //занести его во временную базу $compword
-            // потом формировать массив [$word,$compword]
-
-            // и отправить его js скрипту на обработку
-
-
-         //return $this->request;
-        //echo $this->request;
-       // $string = implode(", ", $this->request);
-       // echo $string;
-
-
+        }
     }
 
     public function requestArray($word)

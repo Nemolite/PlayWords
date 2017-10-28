@@ -27,6 +27,11 @@ function send(word) {
                  document.getElementById('debug2').innerHTML = '<p>'+rep+'</p>';
              }
 
+            if ("true"===arr[2]){
+                var lost = "Я проиграл"
+                document.getElementById('debug2').innerHTML = '<p>'+lost+'</p>';
+            }
+
             var node_user =document.createElement('p');
             node_user.innerHTML = '<p>'+arr[1]+'</p>';
 
