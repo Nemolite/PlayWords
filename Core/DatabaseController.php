@@ -164,16 +164,20 @@ class DatabaseController {
 
        $array = $this->dbconnect->query($sql);
 
-        $result = $array->fetchAll(PDO::FETCH_ASSOC);
+       $result = $array->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($result as $value){
-            foreach($value as $el){
-                $arr[] = $el;
+        if (!empty($result)) {
+            foreach ($result as $value) {
+                foreach ($value as $el) {
+                    $arr[] = $el;
+                }
+
             }
 
+            return $arr;
+        } else {
+            return $arr = [];
         }
-
-        return $arr;
 
     }
 

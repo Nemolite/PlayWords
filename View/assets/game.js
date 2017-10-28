@@ -32,18 +32,18 @@ function send(word) {
                 document.getElementById('debug2').innerHTML = '<p>'+lost+'</p>';
             }
 
+            if (("false"===arr[0])&&("false"===arr[2])){
             var node_user =document.createElement('p');
             node_user.innerHTML = '<p>'+arr[1]+'</p>';
 
             var node_computer =document.createElement('p');
-            node_computer.innerHTML = '<p>'+arr[2]+'</p>';
+            node_computer.innerHTML = '<p>'+arr[3]+'</p>';
 
-            // разобрать response который придет от сервера
-            // ожидается массив из двух слов result (word_user, word_comuter)
 
             result_user.appendChild(node_user);
             result_computer.appendChild(node_computer);
            // document.getElementById('debug2').innerHTML = '<p>'+response+'</p>';
+            }
 
         }
     }

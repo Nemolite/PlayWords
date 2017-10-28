@@ -61,17 +61,9 @@ class GameController {
      */
     public function logicsGame($word)
     {
-
         $req = new DatabaseController();
 
-        //$req->deleteTmpBasa(); // удаление слов из временной базы
-
-           // $req->transference(); //перенос слов из временной базы в основную
-
-        // проверка было это слово или нет
-       // echo $req->selectWordTmp($word);
-
-        if ( !$req->selectWordTmp($word) ) {
+        if ( !$req->selectWordTmp($word) ) { // проверка было этого слово или нет
 
             $this->attrib_rep = "true";
 
@@ -89,13 +81,19 @@ class GameController {
 
                 if (empty($arrOnLetter)) {
                     // echo "я проиграл, я не знаю больше слов";
-
                     $this->attrib_lost = "true";
 
-                    $this->request = $this->attrib_rep . $this->separator . $word . $this->separator . $this->attrib_lost;
-                    // "false",$word,"true"
+                    $this->request = $this->attrib_rep .
+                                     $this->separator .
+                                     $word .
+                                     $this->separator .
+                                     $this->attrib_lost;
+                    // "false",$word,"true","<none word>"
 
-                    echo $this->request;
+                   echo $this->request;
+
+                    $req->deleteTmpBasa(); // удаление слов из временной базы
+                    $req->transference(); //перенос слов из временной базы в основную
 
                    // return false;
                 }
@@ -103,31 +101,36 @@ class GameController {
 
         if (!empty($arrOnLetter)) {
 
-
-            $arrTmp = $req->requestWordsTmpAll();
-            $result = array_diff($arrOnLetter, $arrTmp);
+            $arrTmp = $req->requestWordsTmpAll(); //достаем слова из временной базы
+            $result = array_diff($arrOnLetter, $arrTmp);// сравниваем словами из основной базы
 
             if (empty($result)) {
-                $this->request = $this->attrib_rep . $this->separator . $word . $this->separator . $this->attrib_lost;
-                // "false",$word,"true"
+                $this->request = $this->attrib_rep .
+                                 $this->separator .
+                                 $word .
+                                 $this->separator .
+                                 $this->attrib_lost;
+                // "false",$word,"true","<none word>"
 
                 echo $this->request;
-            } else {
-
-                $req->insertWordTmp($result[array_rand($result)]);
-                // заносим в во временную базу cлов
-
+            }
+            if (!empty($result)) {
+                $itog = $result[array_rand($result)];
+                $req->insertWordTmp($itog);
+                // заносим в во временную базу cлово
 
                 $this->request = $this->attrib_rep .
                     $this->separator .
                     $word .
                     $this->separator .
                     $this->attrib_lost .
-                    array_rand($result);
+                    $this->separator .
+                    $itog;
 
                 // "false",$word,"false",$word_computer
+                // js arr["false",$word,"false",$word_computer]
 
-
+                echo $this->request;
             }
         }
     }
@@ -139,7 +142,7 @@ class GameController {
         $letter = mb_substr ( $word , $lenght-1, $lenght );
 
 
-        if ($letter ==="ь"){
+        if (($letter ==="ь")or($letter ==="ъ")){
             $letter = mb_substr ( $word , $lenght-2, -1 );
         }
 
